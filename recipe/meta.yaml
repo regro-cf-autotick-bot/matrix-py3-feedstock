@@ -1,5 +1,5 @@
 {% set name = "matrix-py3" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6800ae6dc6941b67e9e61b42ffe97d02a477ebae610dd4e2280672d2e90aae8
+  sha256: 56d10cce66a7e0277347e8252b7767efb1fe0b23c55ed5b15a3163cd88f0d80b
 
 build:
   number: 0
@@ -21,6 +21,7 @@ requirements:
   run:
     - python
     - ncurses
+    - pebble
 
 test:
   imports:
