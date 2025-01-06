@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matrix-py3-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matrix-py3-{{ version }}.tar.gz
   sha256: 56d10cce66a7e0277347e8252b7767efb1fe0b23c55ed5b15a3163cd88f0d80b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - matrix = matrix3:matrix_cmd
@@ -20,10 +20,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pebble
 
 test:
@@ -35,6 +35,7 @@ test:
     - coolmatrix --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/chunribu/matrix-py3
